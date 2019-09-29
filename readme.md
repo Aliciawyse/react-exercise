@@ -1,8 +1,23 @@
-lessons learned:
+# React exercise
 
-- Higher order components: An example is the `next/Link` component.
-- Javascript modules: An example is an exported page.
+## Built with
 
-- What does the arrow function do?
+* Next.js
 
-- How shared components can be advantageous.
+## Development Process
+
+* [1. Initial Research](#1-initial-planning)
+* [2. My approach](#2-my-approach)
+* [3. Challenges and Successes](#3-challenges-and-successes)
+* [4. Future Additions](#4-future-additions)
+* [5. How to run this script](#5-how-to-run-this-script)
+
+### 1. Initial Research
+
+### 2. My approach
+
+### 3. Challenges and Successes
+
+### 4. Future Additions
+
+### 5. How to run this script
