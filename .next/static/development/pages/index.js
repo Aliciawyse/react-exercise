@@ -119,107 +119,153 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 var _jsxFileName = "/Users/aliciabarrett/react-exercise/components/TimeTable.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var TimeTable = function TimeTable(props) {
+
+var TimeTable = function TimeTable() {
+  var availabilityData = [{
+    id: 1,
+    time: "9:00am - 10:00am",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 2,
+    time: "10:00am - 11:00am",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 3,
+    time: "11:00am - 12:00am",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 4,
+    time: "12:00pm = 1:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 5,
+    time: "1:00pm - 2:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 6,
+    time: "2:00pm - 3:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 7,
+    time: "3:00pm - 4:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 8,
+    time: "4:00pm - 5:00pm",
+    name: '',
+    phone_number: ''
+  }];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(availabilityData),
+      timeWindow = _useState[0],
+      setTimeWindow = _useState[1];
+
   return __jsx("table", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 2
+      lineNumber: 20
     },
     __self: this
   }, __jsx("thead", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 21
     },
     __self: this
   }, __jsx("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 22
     },
     __self: this
   }, __jsx("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 23
     },
     __self: this
   }, "Time"), __jsx("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 24
     },
     __self: this
   }, "Name"), __jsx("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 25
     },
     __self: this
   }, "Phone number"), __jsx("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 26
     },
     __self: this
   }, "Action"))), __jsx("tbody", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 29
     },
     __self: this
-  }, props.slots.length > 0 ? props.slots.map(function (slot) {
+  }, availabilityData.length > 0 ? availabilityData.map(function (slot) {
     return __jsx("tr", {
       key: slot.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 33
       },
       __self: this
-    }, console.log(slot), __jsx("td", {
+    }, __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 34
       },
       __self: this
     }, slot.time), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 35
       },
       __self: this
     }, slot.name), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 36
       },
       __self: this
     }, slot.phone_number), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 37
       },
       __self: this
     }, __jsx("button", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 38
       },
       __self: this
     }, "Edit")));
   }) : __jsx("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 43
     },
     __self: this
   }, __jsx("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 44
     },
     __self: this
   }, "No time slots."))));
@@ -10207,97 +10253,45 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var _components_TimeTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TimeTable */ "./components/TimeTable.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+/* harmony import */ var _components_TimeTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TimeTable */ "./components/TimeTable.js");
 var _jsxFileName = "/Users/aliciabarrett/react-exercise/pages/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 var Index = function Index() {
-  var availabilityData = [{
-    id: 1,
-    time: "9:00 am",
-    name: 'Tania',
-    phone_number: '341 659 9732'
-  }, {
-    id: 2,
-    time: "10:00 am",
-    name: 'Craig',
-    phone_number: '730 427 5511'
-  }, {
-    id: 3,
-    time: "11:00 am",
-    name: 'Ben',
-    phone_number: '506 869 6237'
-  }, {
-    id: 4,
-    time: "12:00 pm",
-    name: 'Bernete',
-    phone_number: '742 303 1282'
-  }, {
-    id: 5,
-    time: "1:00 pm",
-    name: 'Mallory',
-    phone_number: '407 363 6700'
-  }, {
-    id: 6,
-    time: "2:00 pm",
-    name: 'Rosabelle',
-    phone_number: '696 219 3427'
-  }, {
-    id: 7,
-    time: "3:00 pm",
-    name: 'Celina',
-    phone_number: '162 705 8012'
-  }, {
-    id: 8,
-    time: "4:00 pm",
-    name: 'Dulciana',
-    phone_number: '824 849 8258'
-  }, {
-    id: 9,
-    time: "5:00 pm",
-    name: 'Emmalee',
-    phone_number: '274 822 0717'
-  }];
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(availabilityData),
-      slots = _useState[0],
-      setSlots = _useState[1];
-
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 7
     },
     __self: this
-  }, __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  }, __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 8
     },
     __self: this
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 9
     },
     __self: this
   }, "Choose a time slot:"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 10
     },
     __self: this
-  }, __jsx(_components_TimeTable__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    slots: slots,
+  }, __jsx(_components_TimeTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 11
     },
     __self: this
   }))));

@@ -208,107 +208,154 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 var _jsxFileName = "/Users/aliciabarrett/react-exercise/components/TimeTable.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const TimeTable = props => __jsx("table", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 2
-  },
-  __self: undefined
-}, __jsx("thead", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 3
-  },
-  __self: undefined
-}, __jsx("tr", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
-}, __jsx("th", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, "Time"), __jsx("th", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, "Name"), __jsx("th", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, "Phone number"), __jsx("th", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, "Action"))), __jsx("tbody", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}, props.slots.length > 0 ? props.slots.map(slot => __jsx("tr", {
-  key: slot.id,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 15
-  },
-  __self: undefined
-}, console.log(slot), __jsx("td", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-}, slot.time), __jsx("td", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 18
-  },
-  __self: undefined
-}, slot.name), __jsx("td", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 19
-  },
-  __self: undefined
-}, slot.phone_number), __jsx("td", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 20
-  },
-  __self: undefined
-}, __jsx("button", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 21
-  },
-  __self: undefined
-}, "Edit")))) : __jsx("tr", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 26
-  },
-  __self: undefined
-}, __jsx("td", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 27
-  },
-  __self: undefined
-}, "No time slots."))));
+
+const TimeTable = () => {
+  const availabilityData = [{
+    id: 1,
+    time: "9:00am - 10:00am",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 2,
+    time: "10:00am - 11:00am",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 3,
+    time: "11:00am - 12:00am",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 4,
+    time: "12:00pm = 1:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 5,
+    time: "1:00pm - 2:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 6,
+    time: "2:00pm - 3:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 7,
+    time: "3:00pm - 4:00pm",
+    name: '',
+    phone_number: ''
+  }, {
+    id: 8,
+    time: "4:00pm - 5:00pm",
+    name: '',
+    phone_number: ''
+  }];
+  const {
+    0: timeWindow,
+    1: setTimeWindow
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(availabilityData);
+  return __jsx("table", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, __jsx("thead", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, __jsx("tr", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, __jsx("th", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, "Time"), __jsx("th", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, "Name"), __jsx("th", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "Phone number"), __jsx("th", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, "Action"))), __jsx("tbody", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, availabilityData.length > 0 ? availabilityData.map(slot => __jsx("tr", {
+    key: slot.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, __jsx("td", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, slot.time), __jsx("td", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, slot.name), __jsx("td", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, slot.phone_number), __jsx("td", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, __jsx("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }, "Edit")))) : __jsx("tr", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, __jsx("td", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, "No time slots."))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (TimeTable);
 
@@ -2011,96 +2058,45 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var _components_TimeTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TimeTable */ "./components/TimeTable.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+/* harmony import */ var _components_TimeTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TimeTable */ "./components/TimeTable.js");
 var _jsxFileName = "/Users/aliciabarrett/react-exercise/pages/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 const Index = () => {
-  const availabilityData = [{
-    id: 1,
-    time: "9:00 am",
-    name: 'Tania',
-    phone_number: '341 659 9732'
-  }, {
-    id: 2,
-    time: "10:00 am",
-    name: 'Craig',
-    phone_number: '730 427 5511'
-  }, {
-    id: 3,
-    time: "11:00 am",
-    name: 'Ben',
-    phone_number: '506 869 6237'
-  }, {
-    id: 4,
-    time: "12:00 pm",
-    name: 'Bernete',
-    phone_number: '742 303 1282'
-  }, {
-    id: 5,
-    time: "1:00 pm",
-    name: 'Mallory',
-    phone_number: '407 363 6700'
-  }, {
-    id: 6,
-    time: "2:00 pm",
-    name: 'Rosabelle',
-    phone_number: '696 219 3427'
-  }, {
-    id: 7,
-    time: "3:00 pm",
-    name: 'Celina',
-    phone_number: '162 705 8012'
-  }, {
-    id: 8,
-    time: "4:00 pm",
-    name: 'Dulciana',
-    phone_number: '824 849 8258'
-  }, {
-    id: 9,
-    time: "5:00 pm",
-    name: 'Emmalee',
-    phone_number: '274 822 0717'
-  }];
-  const {
-    0: slots,
-    1: setSlots
-  } = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(availabilityData);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 7
     },
     __self: undefined
-  }, __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  }, __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 8
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 9
     },
     __self: undefined
   }, "Choose a time slot:"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 10
     },
     __self: undefined
-  }, __jsx(_components_TimeTable__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    slots: slots,
+  }, __jsx(_components_TimeTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 11
     },
     __self: undefined
   }))));

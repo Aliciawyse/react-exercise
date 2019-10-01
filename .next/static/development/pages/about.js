@@ -10137,7 +10137,7 @@ function About() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!**********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2FUsers%2Faliciabarrett%2Freact-exercise%2Fpages%2Fabout.js ***!
   \**********************************************************************************************************************************/
@@ -10160,5 +10160,5 @@ module.exports = dll_626120069dced6d7a727;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=about.js.map
