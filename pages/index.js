@@ -5,6 +5,7 @@ const Index = () => {
 
     return (
         <div>
+            <div id="modal"></div>
             <Layout>
                 <h2>Choose a time slot:</h2>
                 <div>
