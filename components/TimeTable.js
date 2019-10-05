@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import { Modal } from './Modal';
 
 const TimeTable = () => {
 
@@ -15,14 +15,6 @@ const TimeTable = () => {
     ]
 
     const [timeWindow, setTimeWindow] = useState(availabilityData)
-
-    //  don't show modal at first
-    const [openModal, showModal] = useState(false);
-
-    const toggleModal = () => {
-        console.log("Modal toggled!")
-        showModal(true)
-    }
 
     return (
         <div>
@@ -44,11 +36,7 @@ const TimeTable = () => {
                                     <td>{slot.name}</td>
                                     <td>{slot.phone_number}</td>
                                     <td>
-                                        <button
-                                            onClick={toggleModal}
-                                        >
-                                            Edit
-                                    </button>
+                                        <Modal />
                                     </td>
                                 </tr>
                             ))
@@ -60,21 +48,6 @@ const TimeTable = () => {
                     }
                 </tbody>
             </table>
-            <div>
-                {console.log("====SHOW MODAL?====", showModal)}
-                {
-                    showModal ? (
-                        <Modal>
-                            <div>
-                                <h2>This is the modal!</h2>
-                                <button
-                                    onClick={toggleModal}>
-                                    No!
-                            </button>
-                            </div>
-                        </Modal>
-                    ) : null}
-            </div>
         </div>
     )
 }

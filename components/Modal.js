@@ -1,42 +1,71 @@
-import React, { useEffect, useRef } from 'react';
-import ReactDOM, { createPortal } from 'react-dom';
+import * as React from 'react'
+import { Portal } from './Portal'
 
-//  a function which takes in children
-// returns a function
-const Modal = ({ children }) => {
+export class Modal extends React.Component {
 
-    // useRef allows you to clean up your dom elements
-    // we want one div created one
-    const elRef = useRef(null);
+    // Odd ritual, this will be constructed with properties and those properties will be handed to react. Call the constructor on my parent class which is React.Component.
+    constructor() {
+        super(...arguments)
 
-    if (!elRef.current) {
-        // ***
-        // This code creates a div.
-        // But it results in a ReferenceError: document is not defined
-        // const div = document.createElement("div");
-        // elRef.current = div;
-        // ***
-
-        // ALTERNATIVELY
-        if (typeof window !== 'undefined') {
-            const div = document.createElement("div");
-            elRef.current = div;
-        }
+        //  set an initial state
+        //  this.state is self contained in the class. It's master of it's own state.
+        //  this state will change later.
+        this.state = { opened: false }
     }
 
-    //  once the div renders
-    useEffect(() => {
-        //  grab the div where the id is "modal"
-        const modalRoot = document.getElementById("modal");
-        //  append div
-        modalRoot.appendChild(elRef.current);
-        // remove it when you're done. this is the Component will unmount of hooks
-        return () => modalRoot.removeChild(elRef.current);
+    open = () => {
+        this.setState({ opened: true })
+    }
 
-    }, []);
-    // ERROR THROWN : Target container is not a DOM element.
-    return createPortal(<div>{children}</div>, elRef.current);
-    // return null
-};
+    close = () => {
+        this.setState({ opened: false })
+    }
 
-export default Modal;
+    render() {
+        return (
+            <React.Fragment>
+                <button type='button' onClick={this.open}>Edit</button>
+
+                {this.state.opened && (
+                    <Portal selector='#modal'>
+                        <div className='overlay'>
+                            <div className='modal'>
+                                <p>
+                                    This modal is rendered using{' '}
+                                    <a href='https://reactjs.org/docs/portals.html'>portals</a>.
+                                </p>
+                                <button type='button' onClick={this.close}>Close Modal</button>
+                            </div>
+                            <style jsx global>{`
+                            body {
+                                overflow: hidden;
+                            }
+                            `}
+                            </style>
+                            <style jsx>{`
+                                .overlay {
+                                    position: fixed;
+                                    background-color: rgba(0, 0, 0, 0.7);
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                }
+
+                                .modal {
+                                    background-color: white;
+                                    position: absolute;
+                                    top: 10%;
+                                    right: 10%;
+                                    bottom: 10%;
+                                    left: 10%;
+                                    padding: 1em;
+                                }
+                            `}</style>
+                        </div>
+                    </Portal>
+                )}
+            </React.Fragment>
+        )
+    }
+}
