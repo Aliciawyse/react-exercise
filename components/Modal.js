@@ -1,16 +1,46 @@
+//  WORK IN PROGRESS
 import * as React from 'react'
 import { Portal } from './Portal'
+import { createStore } from 'redux'
+import { connect, Provider } from 'react-redux'
+
+const initialState = {
+    name: "",
+}
+
+const setName = () => ({
+    type: "NAME"
+})
+
+const reducer = (state = initialState, action) => {
+    if (action.type === "NAME") {
+        return {
+            name: state.name
+        }
+    }
+    return state;
+}
+
+const store = createStore(reducer);
+
+const mapStateToProps = (state) => { return state }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        name() { dispatch(setName()) }
+    }
+}
+
 
 export class Modal extends React.Component {
 
-    // Odd ritual, this will be constructed with properties and those properties will be handed to react. Call the constructor on my parent class which is React.Component.
-    constructor() {
+    //  May remove this once I get Redux working.
+    constructor(props) {
         super(...arguments)
 
-        //  set an initial state
-        //  this.state is self contained in the class. It's master of it's own state.
-        //  this state will change later.
-        this.state = { opened: false }
+        this.state = {
+            opened: false
+        }
     }
 
     open = () => {
@@ -21,28 +51,38 @@ export class Modal extends React.Component {
         this.setState({ opened: false })
     }
 
-    render() {
-        return (
-            <React.Fragment>
-                <button type='button' onClick={this.open}>Edit</button>
 
-                {this.state.opened && (
-                    <Portal selector='#modal'>
-                        <div className='overlay'>
-                            <div className='modal'>
-                                <p>
-                                    This modal is rendered using{' '}
-                                    <a href='https://reactjs.org/docs/portals.html'>portals</a>.
-                                </p>
-                                <button type='button' onClick={this.close}>Close Modal</button>
-                            </div>
-                            <style jsx global>{`
+    render() {
+        const { count, increment } = this.props;
+        console.log({ count, increment })
+        return (
+            <Provider store={store}>
+                {/* <PersonInfoContainer /> */}
+                <React.Fragment>
+                    <button type='button' onClick={this.open}>Edit</button>
+                    {this.state.opened && (
+                        <Portal selector='#modal'>
+                            <div className='overlay'>
+                                <div className='modal'>
+                                    {/* <Provider store={store}>
+                                    <Form />
+                                </Provider> */}
+                                    {/* <Form store={store} /> */}
+                                    <form>
+                                        <label>Name</label>
+                                        <input type="text" name="name" value="" />
+                                        <label>Phone number</label>
+                                        <input type="text" name="username" value="" />
+                                        <button type='button' onClick={this.close}>Close Modal</button>
+                                    </form>
+                                </div>
+                                <style jsx global>{`
                             body {
                                 overflow: hidden;
                             }
                             `}
-                            </style>
-                            <style jsx>{`
+                                </style>
+                                <style jsx>{`
                                 .overlay {
                                     position: fixed;
                                     background-color: rgba(0, 0, 0, 0.7);
@@ -62,10 +102,16 @@ export class Modal extends React.Component {
                                     padding: 1em;
                                 }
                             `}</style>
-                        </div>
-                    </Portal>
-                )}
-            </React.Fragment>
+                            </div>
+                        </Portal>
+                    )}
+                </React.Fragment>
+            </Provider>
         )
     }
 }
+
+const PersonInfoContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Modal)

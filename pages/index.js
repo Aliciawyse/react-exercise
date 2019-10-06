@@ -1,5 +1,5 @@
 import Layout from '../components/MyLayout';
-import TimeTable from '../components/TimeTable';
+import TimeTable from '../components/Timetable/TimeTable';
 
 const Index = () => {
 

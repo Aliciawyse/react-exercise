@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
 export class Portal extends React.Component {
     // anything passed down from the parent element is going to be
     // available in this.props.
