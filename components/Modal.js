@@ -53,8 +53,8 @@ export class Modal extends React.Component {
 
 
     render() {
-        const { count, increment } = this.props;
-        console.log({ count, increment })
+        const { name } = this.props;
+        console.log({ name })
         return (
             <Provider store={store}>
                 {/* <PersonInfoContainer /> */}
